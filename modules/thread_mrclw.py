@@ -17,7 +17,7 @@ class ThreadMrclw:
                         while threading.active_count() > self.max_conection:
                             time.sleep(self.__time_sleep)
                         thread = threading.Thread(
-                            target=_function_name, args=(
+                            target = _function_name, args=(
                                 tgt_str,  _mix,)
                         )
                         list_threads.append(thread)
@@ -37,7 +37,7 @@ class ThreadMrclw:
         try:
             executor = ThreadPoolExecutor(max_workers=self.max_conection)
             executor.map(_function_name, _target, _exploit)
-            executor.shutdown(wait=True)
+            executor.shutdown(wait = True)
             executor.shutdown()
         except Exception as err:
             print(err)
